@@ -38,40 +38,42 @@
           var root = Math.sqrt(x);
           $('#display').text(root);
           break;
-        }
+        case 'fac':
+          var fac = factorial(x);
+          $('#display').text(fac);
+          break;
+        case 'exp':
+          var exp = Math.pow(y,x);
+          $('#display').text(exp);
+          break;
+        case 'sum':
+          var sum = summation();
+          $('#display').text(sum);
+          break;
+
+
       }
-    //     case 'fac':
-    //       var fac = factorial(x);
-    //       $('#display').text(fac);
-    //       break;
-    //     case 'exp':
-    //       var exp = Math.pow(y,x);
-    //       $('#display').text(exp);
-    //       break;
-    //     case 'sum':
-    //       var sum =
-    //
-    //   }
-    // }
-    //
-    // function sum (){
-    //   var total = 0;
-    //
-    //   $('#queue > div').each(function(index,div){
-    //     var x = div.textContent * 1;
-    //     total += x;
-    //
-    //   });
-    //     return total;
-    // }
-    //
-    // function factorial (x){
-    //   var sum = 1;
-    //   var x = $('queue').text() *1;
-    //   for(var i =2; i <= x; i++){
-    //     product *=i;
-    //   }
-    // }
+    }
+
+    function summation (){
+      var total = 0;
+
+      $('#queue > div').each(function(index,div){
+        var x = div.textContent * 1;
+        total += x;
+
+      });
+        return total;
+    }
+
+    function factorial (){
+      var sum = 1;
+      var x = $('#queue > div:nth-child(1)').text() *1;
+      for(var i =2; i <= x; i++){
+        sum *=i;
+      }
+      return sum;
+    }
 
     function push (){
       var display = $('#display').text();
@@ -110,6 +112,7 @@
         $('#display').text(0);
       } else {
         $('#queue').empty();
+        $('#display').text(0);
       }
     }
 
